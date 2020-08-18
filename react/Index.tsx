@@ -27,7 +27,7 @@ const ProductPromotionBadges: StorefrontFunctionComponent<ProductPromotionBadges
     <div className={`${handles.wraper}`}>
       {commercialOffer.discountHighlights.map((higlight: { name: string }) => (
         // eslint-disable-next-line react/jsx-key
-        <div className={`${handles.tag}-${escape(higlight.name)} f6 br-pill ba ph3 pv2 mb2 dib black dim`}>{higlight.name}</div>
+        <div className={`${handles.tag} ${handles.tag}--${higlight.name.toLowerCase().replace(/[^a-zA-Z0-9]/g,'-')} f6 br-pill ba ph3 pv2 mb2 dib black dim`}>{higlight.name}</div>
       ))}
     </div>
   )

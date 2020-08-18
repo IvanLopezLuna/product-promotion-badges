@@ -29,7 +29,8 @@ vtex install vtex.product-promotion-badges
 ## Handles
 
   - 'wraper'
-  - 'tag-{{scaped promotion name}}'
+  - 'tag'
+  - 'tag--{{promotion name}}'  //special characters and spaces replaced for '-'
 
 ## Props
 
