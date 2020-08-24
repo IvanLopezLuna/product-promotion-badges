@@ -7,7 +7,7 @@ import { ProductContext } from 'vtex.product-context'
 
 //Declare Handles for the react component to be accesible
 const CSS_HANDLES = [
-  'wraper',
+  'wrapper',
   'tag'
 ] as const
 
@@ -20,14 +20,15 @@ const ProductPromotionBadges: StorefrontFunctionComponent<ProductPromotionBadges
     return null
   }
 
-  console.log(selectedItem)
+  // console.log(selectedItem)
 
   return (
-
-    <div className={`${handles.wraper}`}>
+    <div className={`${handles.wrapper}`}>
       {commercialOffer.discountHighlights.map((higlight: { name: string }) => (
         // eslint-disable-next-line react/jsx-key
-        <div className={`${handles.tag} ${handles.tag}--${higlight.name.toLowerCase().replace(/[^a-zA-Z0-9]/g,'-')} f6 br-pill ba ph3 pv2 mb2 dib black dim`}>{higlight.name}</div>
+        <div className={`${handles.tag} ${handles.tag}--${higlight.name.toLowerCase().replace(/[^a-zA-Z0-9]/g,'-')} f6 br-pill ba ph3 pv2 mb2 dib black dim`} data-promotion={`${higlight.name.toLowerCase().replace(/[^a-zA-Z0-9]/g,'-')}`} >
+          {higlight.name}
+        </div>
       ))}
     </div>
   )
